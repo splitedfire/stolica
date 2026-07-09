@@ -2,37 +2,39 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>ts</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="js/main.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ts</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
 
-<section class="hero-wrapper">
+    <section class="hero-wrapper">
         <video id="bgVideo" autoplay loop muted playsinline>
             <source src="./video/IMG_3761.MP4" type="video/mp4">
         </video>
-        
+
         <div class="hero-overlay"></div>
-        
+
         <div class="container">
             <header>
                 <a href="#" class="logo">ТВОЯ СТОЛИЦА</a>
                 <nav>
                     <ul>
-                        <li><a href="#">База недвижимости</a></li>
-                        <li><a href="#">Услуги</a></li>
+                        <li><a href="#PropertyObjects">База недвижимости</a></li>
+                        <li><a href="#searchSection">Услуги</a></li>
                         <li><a href="#">Новостройки</a></li>
                         <li><a href="#">О компании</a></li>
-                        <li><a href="#">Отзывы</a></li>
+                        <li><a href="#reviewsSection">Отзывы</a></li>
                         <li><a href="#">Аналитика</a></li>
                         <li><a href="#">Партнеры</a></li>
                     </ul>
@@ -42,7 +44,7 @@
                     <a href="#" class="btn-primary">Заявка</a>
                 </div>
             </header>
-           
+
         </div>
 
         <div class="scroll-hint" id="scrollHint">
@@ -55,19 +57,257 @@
         <div class="search-container">
             <h1>Ваш главный эксперт на рынке недвижимости</h1>
             <p>Опыт, доверие и гарантия качества с 1996 года</p>
-            
+
             <div class="search-panel">
-                <select>
-                    <option>Купить</option>
+                <select class="basic-select">
+                    <option>Квартира</option>
+                    <option>Новостройка</option>
                     <option>Снять</option>
-                    <option>Продать</option>
-                    <option>Сдать</option>
+                    <option>На сутки</option>
                 </select>
-                <input type="text" placeholder="Введите адрес, район или метро...">
+
+                <div class="custom-dropdown" id="roomsDropdown">
+                    <div class="dropdown-header">Кол-во комнат <span class="arrow">▼</span></div>
+                    <div class="dropdown-body">
+                        <div class="dropdown-item">1 комнатная</div>
+                        <div class="dropdown-item">2 комнатная</div>
+                        <div class="dropdown-item">3 комнатная</div>
+                        <div class="dropdown-item">4 комнатная</div>
+                        <div class="dropdown-item">5 комнатная</div>
+                        <div class="dropdown-item">6 и более комнатная</div>
+                        <div class="dropdown-item">Пентхаус</div>
+                    </div>
+                </div>
+
+                <div class="custom-dropdown" id="priceDropdown">
+                    <div class="dropdown-header">Цена <span class="arrow">▼</span></div>
+                    <div class="dropdown-body price-body">
+                        <div class="currency-tabs">
+                            <button class="active">BYN</button>
+                            <button>USD</button>
+                            <button>EUR</button>
+                            <button>RUB</button>
+                        </div>
+                        <div class="price-inputs">
+                            <input type="number" placeholder="от">
+                            <input type="number" placeholder="до">
+                        </div>
+                    </div>
+                </div>
+
+                <input type="text" placeholder="Введите адрес, район...">
                 <button>Найти</button>
             </div>
         </div>
     </section>
+
+    <section class="property-objects" id="PropertyObjects">
+        <div class="container">
+
+            <div class="section-header">
+                <h2>Новые объекты в базе</h2>
+                <a href="#" class="view-all">Вся база новостроек</a>
+            </div>
+
+            <div class="cards-grid">
+
+                <a href="#" class="property-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=600&auto=format&fit=crop"
+                            alt="Зеленая гавань">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">«Зеленая гавань», жилой комплекс</h3>
+                        <p class="card-location">Пригород, 3.5 км от МКАД р-н<br>Большое Стиклево</p>
+
+                        <div class="rooms-badges">
+                            <span class="room-badge">1</span>
+                            <span class="room-badge">2</span>
+                            <span class="room-badge">3</span>
+                            <span class="room-badge">4</span>
+                        </div>
+
+                        <div class="card-price">
+                            <span class="price-byn">4 002 руб</span>
+                            <span class="price-usd">1 394 $</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="property-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?q=80&w=600&auto=format&fit=crop"
+                            alt="Зеленая гавань">
+                        <button class="favorite-btn" title="Добавить в избранное">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">«Зеленая гавань», жилой комплекс</h3>
+                        <p class="card-location">Пригород, 3.5 км от МКАД р-н<br>Большое Стиклево</p>
+
+                        <div class="rooms-badges">
+                            <span class="room-badge">1</span>
+                            <span class="room-badge">2</span>
+                            <span class="room-badge">3</span>
+                            <span class="room-badge">4</span>
+                        </div>
+
+                        <div class="card-price">
+                            <span class="price-byn">4 002 руб</span>
+                            <span class="price-usd">1 394 $</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="property-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?q=80&w=600&auto=format&fit=crop"
+                            alt="Таунхаусы">
+                        <button class="favorite-btn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Таунхаусы Зеленая гавань, жилой квартал</h3>
+                        <p class="card-location">Пригород, 3.5 км от МКАД р-н<br>Большое Стиклево</p>
+                        <div class="rooms-badges">
+                            <span class="room-badge">2</span>
+                            <span class="room-badge">3</span>
+                            <span class="room-badge">4</span>
+                        </div>
+                        <div class="card-price">
+                            <span class="price-byn">6 775 руб</span>
+                            <span class="price-usd">2 360 $</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="property-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=600&auto=format&fit=crop"
+                            alt="Минск Мир">
+                        <button class="favorite-btn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">«Минск Мир», многофункциональный комплекс</h3>
+                        <p class="card-location">Октябрьский район: Аэродромная,<br>Могилевская, Воронянского</p>
+                        <div class="rooms-badges">
+                            <span class="room-badge">1</span>
+                            <span class="room-badge">2</span>
+                            <span class="room-badge">3</span>
+                            <span class="room-badge">4</span>
+                        </div>
+                        <div class="card-price">
+                            <span class="price-byn">4 550 руб</span>
+                            <span class="price-usd">1 585 $</span>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="#" class="property-card">
+                    <div class="card-img-wrapper">
+                        <img src="https://images.unsplash.com/photo-1574362848149-11496d93a7c7?q=80&w=600&auto=format&fit=crop"
+                            alt="Маяк Минска">
+                        <button class="favorite-btn">
+                            <svg viewBox="0 0 24 24">
+                                <path
+                                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="card-content">
+                        <h3 class="card-title">Бизнес-апартаменты "Минск Мир"</h3>
+                        <p class="card-location">Октябрьский район: Минск Мир<br>(Minsk World)</p>
+                        <div class="rooms-badges">
+                            <span class="room-badge">1</span>
+                            <span class="room-badge">2</span>
+                            <span class="room-badge">3</span>
+                            <span class="room-badge">4</span>
+                        </div>
+                        <div class="card-price">
+                            <span class="price-byn">4 157 руб</span>
+                            <span class="price-usd">1 448 $</span>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="reviews-section" id="reviewsSection">
+    <div class="container">
+        <h2 class="reviews-title animate-review">Что говорят наши клиенты</h2>
+        
+        <div class="reviews-grid">
+            
+            <div class="review-card animate-review">
+                <div class="review-header">
+                    <div class="review-avatar">АИ</div>
+                    <div class="review-author">
+                        <h4>Александр Иванов</h4>
+                        <span>Покупка новостройки</span>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">
+                    "Огромное спасибо агентству! Помогли подобрать отличную квартиру в Минск Мир. Юридическое сопровождение на высшем уровне, сэкономили мне кучу времени и нервов."
+                </p>
+                <span class="review-date">12 мая 2026</span>
+            </div>
+
+            <div class="review-card animate-review">
+                <div class="review-header">
+                    <div class="review-avatar">МС</div>
+                    <div class="review-author">
+                        <h4>Мария Смирнова</h4>
+                        <span>Сдача квартиры</span>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">
+                    "Сдаю через них уже вторую квартиру. Арендаторов находят буквально за пару дней, тщательно проверяют документы. Очень довольна сотрудничеством."
+                </p>
+                <span class="review-date">08 июня 2026</span>
+            </div>
+
+            <div class="review-card animate-review">
+                <div class="review-header">
+                    <div class="review-avatar">ДП</div>
+                    <div class="review-author">
+                        <h4>Дмитрий Петров</h4>
+                        <span>Продажа недвижимости</span>
+                    </div>
+                </div>
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">
+                    "Продали мою трешку на Каменной Горке быстрее, чем я ожидал. Риелтор всегда был на связи, сам проводил показы. Профессионалы своего дела."
+                </p>
+                <span class="review-date">21 июня 2026</span>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 
 </body>
 
