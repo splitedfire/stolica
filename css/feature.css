@@ -1,0 +1,55 @@
+.hero-features {
+    margin-top: 6.4rem; 
+    display: flex;
+    justify-content: center;
+    gap: 3.2rem;
+    flex-wrap: wrap; 
+    
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(1rem);
+    -webkit-backdrop-filter: blur(1rem);
+    padding: 2.4rem 4rem;
+    border-radius: 1.6rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.1);
+}
+
+.hero-feature-item {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+    text-align: left; 
+}
+
+.hero-feature-icon {
+    width: 4.8rem;
+    height: 4.8rem;
+    background-color: rgba(0, 153, 77, 0.3); 
+    color: #4ade80; 
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.hero-feature-icon svg {
+    width: 2.4rem;
+    height: 2.4rem;
+}
+
+.hero-feature-text {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.hero-feature-text strong {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--color-white);
+}
+
+.hero-feature-text span {
+    font-size: 1.3rem;
+    color: rgba(255, 255, 255, 0.7);
+}

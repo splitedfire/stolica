@@ -1,0 +1,96 @@
+.experts {
+    padding: 10rem 0;
+    background: var(--color-white) ;
+}
+
+.experts-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2.4rem;
+}
+
+.expert-card {
+    background: var(--color-border);
+    border-radius: 1.6rem;
+    border: 0.1rem solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: transform var(--transition), border-color var(--transition);
+}
+
+.expert-card:hover {
+    transform: translateY(-0.8rem);
+    border-color: rgba(0, 153, 77, 0.4);
+}
+
+.expert-image-wrapper {
+    width: 100%;
+    height: 38rem; 
+    display: flex;
+    align-items: flex-end; 
+    justify-content: center;
+}
+
+.expert-image {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; 
+    object-position: bottom;
+}
+
+.expert-info {
+    color: var(--color-text-main);
+    padding: 2.4rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.expert-name {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1.6rem;
+    color: var(--color-text-main);
+}
+
+.expert-rating {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    margin-bottom: 1.6rem;
+    font-size: 1.4rem;
+}
+
+.rating-score {
+    font-weight: 800;
+}
+
+.stars {
+    color: var(--color-primary); 
+    font-size: 1.6rem;
+    letter-spacing: 0.2rem;
+}
+
+.reviews-count {
+    color: #999;
+}
+
+.expert-objects {
+    font-size: 1.4rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-bottom: 2.4rem;
+    font-weight: 600;
+    transition: color var(--transition);
+}
+
+.expert-objects:hover {
+    text-decoration: underline;
+}
+
+.expert-objects.empty {
+    color: #777;
+    text-decoration: none;
+    cursor: default;
+}
