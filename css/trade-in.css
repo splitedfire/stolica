@@ -1,20 +1,41 @@
 .trade-in {
-    padding: 10rem 0;
+   padding: 10rem 0;
     overflow: hidden; 
     
-    background-color: #f8f9fa;
-    background-image: radial-gradient(#d1d8e0 0.15rem, transparent 0.15rem);
-    background-size: 2.4rem 2.4rem;
+    /* Добавляем затемняющий градиент поверх картинки */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4   )), 
+        url('../images/trade-in.png');
+        
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover; 
+    
+}
+
+.trade-in-bg    {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    background-image: url('../images/trade-in.png'); 
+    background-size: cover;
+    background-position: center bottom;
+    background-attachment: fixed;
 }
 
 .trade-in-header {
     text-align: center;
-    margin-bottom: 6.4rem;
+    margin:0 3rem 6.4rem 0;
+    border-radius: 2rem;
+    
 }
 
 .trade-in-header .section-subtitle {
     font-size: 1.8rem;
-    color: #6c757d;
+    
     max-width: 70rem;
     margin: 1.6rem auto 0;
     line-height: 1.5;
@@ -24,6 +45,10 @@
     background: linear-gradient(135deg, var(--color-primary) 0%, #39d382 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.trade-in-subtitle{
+    color: white;
 }
 
 .trade-in-comparison {

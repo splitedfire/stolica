@@ -1,6 +1,3 @@
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const header = document.getElementById('main-header');
 
